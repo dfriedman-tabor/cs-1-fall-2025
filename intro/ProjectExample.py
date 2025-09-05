@@ -1,90 +1,106 @@
-# Mr Friedman
-# example of Adventure project step 1
-# help from
+# david friedman
+# project 1 example. this is an example of a project that is much too short, but well coded.
+# yours should be longer but similarly structured
 
-# the first step of the project
-def intro():
-    print("you've crash landed in a jungle. what should you do? ")
+def stranded():
+    print("you're stranded in the middle of the jungle. what do you do?")
+    print("a. climb a tree for a view")
+    print("b. swim down the river")
+    print("c. go hunting")
 
-    answer = input("A. climb a tree \nB. jump in the river \nC. go to sleep ")
-    answer = answer.upper()
+    choice = input()
 
-    if answer =="A":
-        climbedTree()
-    elif answer == "B":
+    if choice == 'a':
+        climbTree()
+    elif choice =='b':
+        logInRiver()
+    elif choice == 'c':
+        hunt()
+
+def climbTree():
+    print("you get halfway up the tree and run into a python. what now?")
+    print("a. fight the python")
+    print("b. jump")
+    choice = input()
+
+    if choice == 'a':
+        print("it eats you. bye")
+
+    elif choice == 'b':
         jumpInRiver()
-    elif answer == "C":
-        goToSleep()
-    else:
-        print("that's not a real answer")
 
-# user climbs a tree and runs into a python
-def climbedTree():
-    print("you climbed the tree, but run into a python at the top")
-    answer = input("A. fight the python\nB. jump off the tree")
-    answer = answer.upper()
+def logInRiver():
+    print("you see a log floating in the river. what now?")
+    print('a. climb on the log')
+    print("b. steer clear of the log")
 
-    if answer =="A":
-        fightPython()
-    elif answer =="B":
-        jumpOffTree()
-    else:
-        print("huh?")
+    choice = input()
 
-# this is the step where you fall in the river
+    if choice == 'a':
+        print("that wasn't a log! an alligator eats you")
+    elif choice == 'b':
+        swimToShore()
+
+
+def swimToShore():
+    print("You decide that the river is not a safe place. Where to next?")
+    print("a. you see smoke in the distance")
+    print("b. climb a tree for a view")
+
+    choice = input()
+
+    if choice == 'a':
+        print("you find a friendly village and they take you in as their own. "
+              "looks like you'll survive!")
+    elif choice == 'b':
+        climbTree()
+
 def jumpInRiver():
-    print("you jump in the water and start swimming downstream. What next?")
-    answer = input("A. pretend you're a floating log\nB. ride on the back of an alligator")
-    answer = answer.upper()
+    print("you jump off the tree and land in the river")
+    logInRiver()
 
-    if answer == "A":
-        floatLikeLog()
-    elif answer == "B":
-        rideAlligator()
-    else:
-        print("that doesn't make any sense")
+def hunt():
+    print("you decide to hunt for some food. Do you want to make a weapon or catch something barehanded?")
+    print("a. make a weapon")
+    print("b. go barehanded")
 
-# user decides to get away from python by jumping off the tree
-def jumpOffTree():
-    print("that wasn't very smart. You break an ankle, and now you're really stuck")
+    choice = input()
 
-# user chooses to float along the river
-def floatLikeLog():
-    print("you're floating along like a log, and some turtles crawl up onto you. Now you have some jungle friends :)")
+    if choice == 'a':
+        buildSpear()
+    elif choice == 'b':
+        print("you quickly find a boar, but with no weapon you discover you're not very dangerous. "
+              "It takes you out with its tusks. bye")
 
-# user chooses to hop on top of an alligator
-def rideAlligator():
-    print("interesting decision.. you're lunch")
+def buildSpear():
+    print("you build a spear out of rocks and wood. What do you want to hunt?")
+    print("a. some small birds")
+    print("b. boar")
+    print("c. man")
 
-# user chooses to go right to sleep
-def goToSleep():
-    print("you start trying to sleep but the mosquitoes just won't leave you alone :(")
+    choice = input()
 
-# results of fighting the python
-def fightPython():
-    print("you're able to hold the python off, but he leaves you with a nasty bite. What next?")
-    answer = input("A. use a wad of leaves as a bandage\nB. cover the bite with mud")
-    answer = answer.upper()
-
-    if answer == "A":
-        bandage()
-    elif answer == "B":
-        mud()
-    else:
-        print("try again")
-
-# results of bandaging your wound
-def bandage():
-    print("nice work - your bite heals well and you're back to the beginning")
-    intro()
-
-# print results of covering your wound in mud
-def mud():
-    print("uh oh - mud doesn't work well and it becomes very infected. not good")
-
-# this tells python to run the intro command (which starts our game)
-intro()
+    if choice == 'a':
+        chaseBirds()
+    elif choice == 'b':
+        chaseBoar()
+    elif choice == 'c':
+        chaseMan()
 
 
+def chaseBirds():
+    print("a spear is just not meant to hunt small birds. Let's try something else")
+    buildSpear()
 
+def chaseBoar():
+    print("you're able to take a boar out with the spear. As you cook it, the smoke "
+          "attracts a search helicopter and you are rescued")
+
+def chaseMan():
+    print("the most dangerous game. You spend days trying to find someone to hunt, "
+          "forgetting that you are stranded alone. In your mania you forget to eat, sleep, or "
+          "drink. Game over")
+
+
+stranded()
 
