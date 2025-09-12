@@ -7,8 +7,10 @@ height = 800
 
 def draw(canvas):
 
-    pass
+    pygame.draw.rect(canvas, (255, 0, 0), (0, 50, 600, 50))
+    pygame.draw.rect(canvas, (255, 0, 0), (300, 300, 50, 50))
 
+    pygame.draw.circle(canvas, (0, 255, 0), (300, 300), 40)
 
 
 
