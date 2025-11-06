@@ -8,7 +8,8 @@ HEIGHT = 600
 
 def setup():
     # load any necessary images here
-    pass
+    global faceImg
+    faceImg = pygame.transform.scale(pygame.image.load("facePicture.png"), (100, 100))
 
 
 def move():
@@ -23,7 +24,7 @@ def checkCollisions():
 
 def draw(canvas):
     # draw your game here
-    pass
+    canvas.blit(faceImg, (300,300))
 
 
 def keyPressed(key):
